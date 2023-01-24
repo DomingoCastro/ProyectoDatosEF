@@ -9,6 +9,8 @@ builder.Services.AddControllersWithViews();
 string connectionString = builder.Configuration.GetConnectionString("hospitallocal");
 //RESOLVEMOS LA DEPENDENCIA DE REPOSITORY
 builder.Services.AddTransient<RepositoryHospital>();
+builder.Services.AddTransient<RepositoryDoctor>();
+builder.Services.AddTransient<RepositoryPlantilla>();
 //LAS CLASES CONTEXT DE ACCESO A DATOS UTILIZAN
 //UN METODO ESPECIAL LLAMADO AddDbContext
 builder.Services.AddDbContext<HospitalContext>

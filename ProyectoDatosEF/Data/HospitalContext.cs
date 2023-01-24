@@ -12,5 +12,7 @@ namespace ProyectoDatosEF.Data
         // DbSet. CADA TABLA DE LA BASE DE DATOS SERA UN DbSet CON UN MODEL.
         //NOSOTROS HAREMOS LA CONSULTAS A DICHO DbSet
         public DbSet<Hospital> Hospitales { get; set; }
+        public DbSet<Doctor> Doctores { get; set; }
+        public DbSet<Plantilla> plant { get; set; }
     }
 }
