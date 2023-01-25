@@ -11,6 +11,7 @@ string connectionString = builder.Configuration.GetConnectionString("hospitalloc
 builder.Services.AddTransient<RepositoryHospital>();
 builder.Services.AddTransient<RepositoryDoctor>();
 builder.Services.AddTransient<RepositoryPlantilla>();
+builder.Services.AddTransient<RepositoryEmpleados>();
 //LAS CLASES CONTEXT DE ACCESO A DATOS UTILIZAN
 //UN METODO ESPECIAL LLAMADO AddDbContext
 builder.Services.AddDbContext<HospitalContext>
@@ -35,6 +36,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Empleados}/{action=Index}/{id?}");
 
 app.Run();
