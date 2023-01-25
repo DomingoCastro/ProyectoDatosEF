@@ -1,12 +1,19 @@
 ﻿@model IEnumerable<ProyectoDatosEF.Models.Plantilla>
 
-
+@{
+    List<string> funciones = ViewData["FUNCIONES"] as List<string>;
+}
 
 <h1>PlantillaFuncion</h1>
 
 <form method="post">
     <label>Introduzca la función</label>
-    <input type="text" name="funcion" class="form-control" required />
+    <select name="funcion" class="form-control"  required> 
+        @foreach (string funcion in funciones)
+        {
+            <option value="@funcion">@funcion</option>
+        }
+    </select>
     <button class="btn btn-info">
         Buscar personas
     </button>

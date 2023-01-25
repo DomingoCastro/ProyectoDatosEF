@@ -30,12 +30,16 @@ namespace ProyectoDatosEF.Controllers
         public IActionResult PlantillaFuncion ()
         {
             List<Plantilla> plant = this.repo.GetPlantilla();
+            List<string> funciones = this.repo.GetFunciones();
+            ViewData["FUNCIONES"] = funciones;
             return View(plant);
         }
         [HttpPost]
         public IActionResult PlantillaFuncion(string funcion)
         {
             List<Plantilla> plant = this.repo.GetPlantillaByFuncion(funcion);
+            List<string> funciones = this.repo.GetFunciones();
+            ViewData["FUNCIONES"] = funciones;
             return View (plant);
         }
     }
