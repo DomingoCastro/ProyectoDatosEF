@@ -24,7 +24,7 @@ namespace ProyectoDatosEF.Controllers
         {
             oficio = "DEVELOPER";
             this.repo.UpdateEmpleado(oficio, incremento);
-            List<Empleados> emp = this.repo.GetEmpleados();
+            List<Empleados> emp = this.repo.FindEmpleados(oficio);
             List<string> lista = this.repo.GetFuncionesemp();
             ViewData["LISTA"] = lista;
             return View(emp);
